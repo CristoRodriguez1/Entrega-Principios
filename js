@@ -1,51 +1,34 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var modalIniciarSesion = document.getElementById('modal-iniciar-sesion');
 
-var medellinCoordenadas = [6.244203, -75.581211];
+    var botonAbrirModal = document.getElementById('boton-abrir-modal');
 
-var zoomMedellin = 12;
+    var spanCerrar = document.getElementsByClassName('cerrar')[0];
+  
+    var formIniciarSesion = document.getElementById('form-iniciar-sesion');
 
-var mymap = L.map('mapa-leaflet').setView(medellinCoordenadas, zoomMedellin);
+    botonAbrirModal.onclick = function() {
+        modalIniciarSesion.style.display = 'block';
+    }
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+    spanCerrar.onclick = function() {
+        modalIniciarSesion.style.display = 'none';
+    }
+.onclick = function(event) {
+        if (event.target == modalIniciarSesion) {
+            modalIniciarSesion.style.display = 'none';
+        }
+    }
 
-fetch('comunas_medellin.geojson')
-    .then(response => response.json())
-    .then(data => {
+    formIniciarSesion.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var usuario = formIniciarSesion.elements['usuario'].value;
+        var contrasena = formIniciarSesion.elements['contrasena'].value;
 
-        var comunasLayer = L.geoJSON(data, {
-            style: function(feature) {
-                return { color: 'blue', weight: 1, fillOpacity: 0.5 };
-            }
-        }).addTo(mymap);
+        console.log('Usuario:', usuario);
+        console.log('Contraseña:', contrasena);
 
-        comunasLayer.bindPopup(function(layer) {
-            return 'Comuna: ' + layer.feature.properties.nombre_comuna;
-        });
-    })
-    .catch(error => {
-        console.error('Error al cargar los datos de comunas:', error);
+        modalIniciarSesion.style.display = 'none';
     });
 
-var datosCalidadAire = [
-    { zona: "Zona 1", calidad: "Buena" },
-    { zona: "Zona 2", calidad: "Regular" },
-    { zona: "Zona 3", calidad: "Mala" }
-];
-
-function mostrarDatosEnSeccion(datos) {
-    var datosContainer = document.getElementById('datos-container');
-    datosContainer.innerHTML = '';
-    datos.forEach(function(dato) {
-        var divDato = document.createElement('div');
-        divDato.innerHTML = '<strong>' + dato.zona + '</strong>: ' + dato.calidad;
-        datosContainer.appendChild(divDato);
-    });
-}
-
-function cargarDatosCalidadAire() {
-    mostrarDatosEnSeccion(datosCalidadAire);
-}
-
-window.onload = cargarDatosCalidadAire;
+});
