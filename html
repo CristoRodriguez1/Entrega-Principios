@@ -3,27 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de Calidad del Aire</title>
+    <title>Control de Calidad del Aire en Medellín</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
     <header>
-        <h1>Control de Calidad del Aire en tu Ciudad</h1>
+        <h1>Control de Calidad del Aire en Medellín</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#comunas">Comunas</a></li>
+                <li><a href="#iniciar-sesion">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section id="mapa">
-            <div id="mapa-leaflet" style="height: 400px;"></div>
+    <main id="inicio">
+        <section id="bienvenida">
+            <h2>Bienvenido</h2>
+            <p>Controla la calidad del aire en las diferentes zonas de Medellín.</p>
         </section>
-        <section id="datos">
-            <h2>Datos de Calidad del Aire</h2>
-            <div id="datos-container"></div>
+        <section id="comunas">
+            <h2>Comunas de Medellín</h2>
+            <div class="comuna">
+                <h2>Comuna 1</h2>
+                <p>Información sobre la calidad del aire en la Comuna 1.</p>
+            </div>
+          <div class="comuna">
+              <h2>Comuna 2</h2>
+              <p>Información sobre la calidad del aire en la Comuna 2.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 3</h2>
+              <p>Información sobre la calidad del aire en la Comuna 3.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 4</h2>
+              <p>Información sobre la calidad del aire en la Comuna 4.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 5</h2>
+              <p>Información sobre la calidad del aire en la Comuna 5.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 6</h2>
+              <p>Información sobre la calidad del aire en la Comuna 6.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 7</h2>
+              <p>Información sobre la calidad del aire en la Comuna 7.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 8</h2>
+              <p>Información sobre la calidad del aire en la Comuna 8.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 9</h2>
+              <p>Información sobre la calidad del aire en la Comuna 9.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 10</h2>
+              <p>Información sobre la calidad del aire en la Comuna 10.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 11</h2>
+              <p>Información sobre la calidad del aire en la Comuna 11.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 12</h2>
+              <p>Información sobre la calidad del aire en la Comuna 12.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 13</h2>
+              <p>Información sobre la calidad del aire en la Comuna 13.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 14</h2>
+              <p>Información sobre la calidad del aire en la Comuna 14.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 15</h2>
+              <p>Información sobre la calidad del aire en la Comuna 15.</p>
+          </div>
+          <div class="comuna">
+              <h2>Comuna 16</h2>
+              <p>Información sobre la calidad del aire en la Comuna 16.</p>
+          </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Control de Calidad del Aire</p>
     </footer>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <div id="modal-iniciar-sesion" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="form-iniciar-sesion">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
